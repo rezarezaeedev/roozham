@@ -12,6 +12,7 @@ class Post(models.Model):
     slug = models.SlugField(unique=True)
     is_published = models.BooleanField(default=False)
     is_active    = models.BooleanField(default=True)
+    keywords = models.TextField(null=1, blank=1)
 
 
     def publish(self):
