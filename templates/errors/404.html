@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <title>Reza Rezaee Daily Journal!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+    <meta name="author" content="Reza Rezaee">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body dir="rtl" class="bg-myblack h-screen">
+    <main class=" flex flex-col items-center justify-center">
+        
+        <article class="flex flex-col gap-10 bg-mywhite p-8 mx-6 my-15 rounded-xl shadow-white max-w-4xl w-full text-center animate-pulse">
+            <h2 class="text-5xl font-semibold">هیچ داده ای یافت نشد ):</h2>
+            <h2 class="text-6xl font-semibold">۴۰۴</h2>
+            <a href="{% url 'home' %}" class="text-2xl" style="text-decoration: none; color: blue;">برگشت به خانه</a>
+            <h1 class="text-sm text-gray-500">وبسایت روزنوشت، ثبت خاطرات روزانه - ساخته شده توسط <strong class="font-normal">رضا رضایی</strong></h1>
+        </article>
+    </main>
+</body>
+</html>
+
+    
+    
+ 

@@ -18,6 +18,9 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from .error_views import custom_404_view
+
+handler404 = 'roozham.error_views.custom_404_view'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
