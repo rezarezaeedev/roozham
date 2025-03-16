@@ -13,9 +13,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-h-icau*zzwj5qt(4)ycbhnol%xbqwmwx*0jjz0!_!yqkqr!%xf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 1
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -30,6 +30,7 @@ INSTALLED_APPS = [
 
     # My apps
     'blog',
+    'user_accounts',
 
     # Installed Apps
     'django_celery_beat',
@@ -107,17 +108,22 @@ USE_I18N = True
 
 USE_TZ = True
 
+# Static and Media file assets
+STATIC_URL = '/static/'  
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets/staticfiles')  
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'templates')]  
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.1/howto/static-files/
-
-STATIC_URL = 'static/'
+MEDIA_URL = '/media/'  
+MEDIA_ROOT = os.path.join(BASE_DIR, 'assets/media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Customization User Model
+AUTH_USER_MODEL = 'user_accounts.CustomUser'
 
 # Celery
 CELERY_BROKER_URL = 'redis://localhost:6379/0'

@@ -1,5 +1,12 @@
 from django.contrib import admin
-from .models import Post
+from .models import Post, BlogSettings
+
+
+@admin.register(BlogSettings)
+class BlogSettingsAdmin(admin.ModelAdmin):
+    list_display = ['id', 'tab_bar_title', 'page_title', 'is_active']
+    list_display_links = ['id', 'tab_bar_title', 'page_title']
+    list_editable = ['is_active']
 
 
 # class ReviewInline(admin.TabularInline):  # یا StackedInline برای نمایش عمودی
@@ -20,7 +27,7 @@ class PostAdmin(admin.ModelAdmin):
     
     fieldsets = (
         ("امروز پاسخ دهید",{'fields':('day_question', 'text', 'secret_text'),}),
-        ("روزنوشت خود را پیکربندی کنید",{'fields':('slug', 'publish_date'),}),
+        ("روزنوشت خود را پیکربندی کنید",{'fields':('slug', 'publish_date', 'keywords'),}),
         ('وضعیت انتشار را تعیین کنید',{'fields':('is_published', 'is_active' ),}),
     )
 

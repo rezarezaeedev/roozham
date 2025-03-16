@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <title>روزنوشت رضا رضایی</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="سوال روز">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="rezarezaeedev">
+    <meta name="keywords" content="کلیدواژه۱, کلیدواژه۲, کلیدواژه۳">
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "۱۰ نکته مهم برای بهبود سئو سایت",
+          "author": {
+            "@type": "Person",
+            "name": "رضا"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "وب‌سایت من",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://example.com/logo.png"
+            }
+          },
+          "datePublished": "2025-03-16",
+          "dateModified": "2025-03-16",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://example.com/seo-tips"
+          }
+        }
+        </script>
+        
+</head>
+<body dir="rtl" class="bg-myblack h-screen">
+    <header class="bg-custom-blue text-white p-6 shadow-md ">
+        <div class="container mx-auto flex justify-between items-center">
+            <h2 class="text-3xl font-bold">روزنوشت های من</h2>
+
+            <a href="https://rezarezaeedev.github.io" rel="nofollow noopener" class="flex items-center gap-8">
+                <div class="flex flex-col gap-1">
+                    <h1 class="text-3xl font-bold sm:animate-pulse lg:animate-none">{{ user.get_full_name_in_persian }}</h1>
+                    <span class="text-orange-200 text-[13px] opacity-100 mx-auto">(درمورد من بیشتر بدانید)</span>
+                </div>
+                <img src="{{ user.image.url }}" loading="lazy" alt="Reza Rezaee Backend developer - رضا رضایی" class="xl:w-25 xl:h-25 sm:w-20 sm:h-20 w-48 h-48 rounded-full object-cover bg-auto hover:scale-110 transition-all ease-in-out duration-300 outline-none ring-orange-400 ring-3">
+            </a>
+        </div>
+    </header>
+
+    <main class=" flex items-center justify-center">
+        <article class="bg-mywhite p-8 mx-6 my-15 rounded-xl shadow-lg max-w-3xl w-full text-center">
+            <strong><h2 class="sm:text-xl 2xl:text-2xl font-semibold text-purple-600 mb-4">به وبلاگ من خوش آمدید!</h2></strong>
+            <p class="sm:text-lg 2xl:text-lg text-gray-700 text-justify">
+               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto mollitia quae voluptates unde incidunt sapiente minus, ab repellat vero accusantium inventore commodi at voluptate accusamus beatae repellendus quisquam illum nulla! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus incidunt, minus, nisi nobis atque aliquam exercitationem placeat aut accusamus sapiente itaque velit ab dolor dolore numquam facere, quas alias quidem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, accusamus aperiam? Perspiciatis earum officiis beatae repudiandae impedit iste accusantium, praesentium iure consectetur reiciendis nulla, nobis tempore a porro odio fugiat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur laboriosam eos quidem, officiis ipsa id delectus quos ut, vero vitae ducimus soluta ea eum animi voluptates officia asperiores sed quisquam.
+            </p>
+        </article>
+
+        <dive class="bg-mywhite p-8 mx-6 my-15 rounded-xl shadow-lg max-w-3xl w-full text-center" hidden>
+            <strong><h2 class="sm:text-xl 2xl:text-2xl font-semibold text-purple-600 mb-4">به وبلاگ من خوش آمدید!</h2></strong>
+            <p class="sm:text-lg 2xl:text-lg text-gray-700 text-justify">
+               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto mollitia quae voluptates unde incidunt sapiente minus, ab repellat vero accusantium inventore commodi at voluptate accusamus beatae repellendus quisquam illum nulla! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus incidunt, minus, nisi nobis atque aliquam exercitationem placeat aut accusamus sapiente itaque velit ab dolor dolore numquam facere, quas alias quidem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, accusamus aperiam? Perspiciatis earum officiis beatae repudiandae impedit iste accusantium, praesentium iure consectetur reiciendis nulla, nobis tempore a porro odio fugiat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur laboriosam eos quidem, officiis ipsa id delectus quos ut, vero vitae ducimus soluta ea eum animi voluptates officia asperiores sed quisquam.
+            </p>
+        </dive>
+    </main>
+    
+</body>
+</html>
+
+    
+    
+ 
