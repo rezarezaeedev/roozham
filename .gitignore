@@ -10,6 +10,10 @@ local_settings.py
 db.sqlite3
 db.sqlite3-journal
 assets/
+*/migrations/*
+
+# But track __init__.py file
+!*/migrations/__init__.py
 
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
