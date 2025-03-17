@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body dir="rtl" class="bg-myblack h-screen px-5 py-4">
+    <header class="bg-custom-blue text-white p-2 lg:p-5 shadow-lg">
+        <div class="container mx-auto flex flex-col-reverse items-center justify-around sm:flex-row  sm:items-center sm:justify-between gap-y-5">
+          <h2 class="text-sm lg:text-2xl xl:text-3xl font-bold"><a href="/"><i class="fa-solid fa-pen"></i> به وبسایت روزنوشت رضارضایی خوش آمدید!</a></h2>
+                <a href="/admin/" class="flex flex-col gap-1">
+                    <p class="text-sm lg:text-sm xl:text-sm font-bold animate-pulse lg:animate-none">برای پیکربندی دیتابیس اقدام کنید. این  صفحه به دلیل خالی بودن پایگاه داده نمایش داده شده است</p>
+                    <span class="text-orange-200 text-[7px] lg:text-[13px] opacity-100 mx-auto">کلیک کنید</span>
+                </a>
+            </a>
+        </div>
+    </header>
+    <main class="flex-col items-center justify-center">
+        <div class="flex flex-col w-full items-center space-y-4 my-8 lg:my-15">
+            <article class="bg-mywhite p-4 lg:p-8 mx-2 lg:mx-6  rounded-xl shadow-white max-w-4xl w-full text-center">
+                <p class="text-[5px] sm:text-[10px] lg:text-sm text-gray-700 text-right mb-4">روزی که ساختمش: دوشنبه، ۲۷ اسفند ۱۴۰۴ - تعطیلات عید دوران سربازی</p>  
+                <p class="text-[5px] sm:text-[10px] lg:text-sm text-gray-700 text-right mb-4">۱۴۰۳/۰۶/۰۱ اعزامی برج (البته دوره طلایی محرم بود و ۱۷ هم رفتیم)</p>  
+                <p class="text-[5px] sm:text-[10px] lg:text-sm text-gray-700 text-right mb-4 text-yellow-600">باشد که رستگار شویم</p>  
+                <p class="text-[5px] sm:text-[10px] lg:text-sm text-gray-700 text-right mb-4">همینطور که از هدف وبسایت پیداست، دوست دارم چند سال بعد بیام رپازیتوری رو باز کنم و این متن خوش آمدگویی رو ببینم و به این فکر کنم که خیلی چیزا تغییر کرده و درست همونطور شد که میخواستم :)</p>  
+            </article>
+        </div>   
+    </main>
+    <br>
+</body>
+</html>
+
+    
+    
+ 
