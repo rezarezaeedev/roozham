@@ -30,7 +30,7 @@
         }
         </script>
 </head>
-<body dir="rtl" class="bg-myblack h-screen px-5 py-4">
+<body dir="rtl" class="bg-myblack h-screen px-5 py-2">
     <header class="bg-custom-blue text-white p-2 lg:p-5 shadow-lg">
         <div class="container mx-auto flex flex-col-reverse items-center justify-around sm:flex-row  sm:items-center sm:justify-between gap-y-5">
           <h2 class="text-sm lg:text-3xl xl:text-4xl font-bold w-full text-center"><a href="/"><i class="fa-solid fa-pen"></i> {{ blogsettings.page_title }}</a></h2>
@@ -40,7 +40,7 @@
                     <span class="text-orange-200 text-[7px] lg:text-[13px] opacity-100 mx-auto">(درمورد من بیشتر بدانید)</span>
                 </div>
                 {% if blogsettings.owner.image %}
-                    <img src="{{ blogsettings.owner.image.url }}" loading="lazy" alt="{{ blogsettings.owner.get_full_name }} - {{ blogsettings.owner.get_full_name_in_persian }}" class="xl:w-25 xl:h-25 sm:w-20 sm:h-20 w-15 h-15 rounded-full object-cover bg-auto hover:scale-110 transition-all ease-in-out duration-300 outline-none ring-orange-400 ring-3">
+                    <img src="{{ blogsettings.owner.image.url }}" loading="lazy" alt="{{ blogsettings.owner.get_full_name }} - {{ blogsettings.owner.get_full_name_in_persian }}" class="xl:w-25 xl:h-25 sm:w-20 sm:h-20 w-17 h-17 rounded-full object-cover bg-auto hover:scale-110 transition-all ease-in-out duration-300 outline-none ring-orange-400 ring-3">
                 {% else %}
                     <i class="fa-solid fa-user text-5xl"></i>
                 {% endif %}
