@@ -35,5 +35,4 @@ class PostAdmin(admin.ModelAdmin):
 
     @admin.display(description='Has secret text')
     def show_secret_text(self, obj):
-        print(obj.publish_date)
         return "Yes" if obj.secret_text else 'No'
