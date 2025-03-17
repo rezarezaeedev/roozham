@@ -16,7 +16,7 @@ class BlogSettings(models.Model):
 
 
 class Post(models.Model):
-    day_question = models.CharField(max_length=100)
+    day_question = models.CharField(max_length=300)
     text = models.TextField(default=":( برای این روز هنوز متنی نوشته نشده است")
     secret_text = models.TextField(null=1, blank=1)
     created_at = models.DateTimeField(auto_now_add=True)

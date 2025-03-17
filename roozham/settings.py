@@ -34,6 +34,7 @@ INSTALLED_APPS = [
 
     # Installed Apps
     'django_celery_beat',
+    "django_jalali",
 ]
 
 MIDDLEWARE = [
