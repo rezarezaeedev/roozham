@@ -33,6 +33,8 @@ def home(request):
     today_date = date.today()
     blogsettings = BlogSettings.objects.filter(is_active=1).last()
     post = Post.objects.filter(publish_date__lte=today_date, is_published=True, is_active=True).last()
+    if not post:
+        return render(request, 'blog/welcome.html', status=200)
     post_publish_date = JalaliDate(post.publish_date)
     post_publish_date = get_persian_date(post_publish_date)
     before_post_slug, after_post_slug = get_before_after_post_slug(post.publish_date)
