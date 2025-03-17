@@ -75,11 +75,11 @@ WSGI_APPLICATION = 'roozham.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('NAME'),
-        'USER': os.getenv('USER'),
-        'PASSWORD': os.getenv('PASSWORD'),
-        'HOST': os.getenv('HOST'),
-        'PORT': os.getenv('PORT'),
+        'NAME': os.getenv('NAMEE'),
+        'USER': os.getenv('USERR'),
+        'PASSWORD': os.getenv('PASSWORDD'),
+        'HOST': os.getenv('HOSTT'),
+        'PORT': os.getenv('PORTT'),
     }
 }
 
