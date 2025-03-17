@@ -8,8 +8,6 @@ User = get_user_model()
 
 
 def get_persian_date(date):
-    print('*'*20)
-    print(date)
     persian_months = [
         'فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور',
         'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'
@@ -17,13 +15,11 @@ def get_persian_date(date):
     days_of_week = [
         'شنبه', 'یک‌شنبه', 'دوشنبه', 'سه‌شنبه', 'چهارشنبه', 'پنج‌شنبه', 'جمعه'
     ]
-    print(days_of_week[date.weekday()]  )
     weekday = days_of_week[date.weekday()]
     day = date.day
     month = persian_months[date.month - 1]
     year = date.year
-    print(f'{weekday}، {day} {month} {year}')
-    return f'{weekday}، {day} {month} {year}'
+    return f'{weekday}، {day} {month} {year}', 
 
 
 def home(request):
