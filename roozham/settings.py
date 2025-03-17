@@ -109,9 +109,9 @@ USE_TZ = True
 
 # Static and Media file assets
 STATIC_URL = '/static/'  
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets/staticfiles')  
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets/static')  
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'templates')]  
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.static.storage.ManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'  
 MEDIA_ROOT = os.path.join(BASE_DIR, 'assets/media')
@@ -125,5 +125,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'user_accounts.CustomUser'
 
 # Celery
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL')
 
