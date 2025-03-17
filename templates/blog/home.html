@@ -11,6 +11,7 @@
     <meta name="keywords" content="{% for keyword in post.get_keywords %}{{ keyword }}{% if not forloop.last %},{% endif %}{% endfor %}">
     <link rel="stylesheet" href="{% static 'blog/style.css' %}">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
@@ -32,7 +33,7 @@
 <body dir="rtl" class="bg-myblack h-screen px-5 py-4">
     <header class="bg-custom-blue text-white p-2 lg:p-5 shadow-lg">
         <div class="container mx-auto flex flex-col-reverse items-center justify-around sm:flex-row  sm:items-center sm:justify-between gap-y-5">
-          <h2 class="text-sm lg:text-3xl xl:text-4xl font-bold">{{ blogsettings.page_title }}</h2>
+          <h2 class="text-sm lg:text-3xl xl:text-4xl font-bold"><a href="/"><i class="fa-solid fa-pen"></i> {{ blogsettings.page_title }}</a></h2>
             <a href="{{ blogsettings.owner.website }}" rel="nofollow noopener" class="flex flex grow items-center content-around sm:items-center sm:justify-end gap-8">
                 <div class="flex flex-col gap-1">
                     <h1 class="text-lg lg:text-3xl xl:text-4xl font-bold animate-pulse lg:animate-none">{{ blogsettings.owner.get_full_name_in_persian }}</h1>
@@ -54,12 +55,16 @@
                 <p class="text-sm 2xl:text-lg text-gray-700 text-justify text-balance">{{ post.text }}</p>
             </article>
             <div class="flex gap-4">
-                <button class="flex items-center justify-center w-9 h-9 rounded-lg px-6 lg:px-10 opacity-50 hover:opacity-100 transition-all duration-300 bg-mywhite bg-opacity-60 hover:bg-opacity-100 focus:outline-none">
-                    <span class="text-myblack text-sm lg:text-lg">دیروز</span> 
-                </button>
-                <button class="flex items-center justify-center w-9 h-9 rounded-lg px-6 lg:px-10 opacity-50 hover:opacity-100 transition-all duration-300 bg-mywhite bg-opacity-60 hover:bg-opacity-100 focus:outline-none">
-                    <span class="text-myblack text-sm lg:text-lg">فردا</span> 
-                </button>
+                {% if before_post_slug %}
+                    <a href="/post/{{ before_post_slug }}/" class="flex items-center justify-center w-9 h-9 rounded-lg px-6 lg:px-10 opacity-50 hover:opacity-100 transition-all duration-300 bg-mywhite bg-opacity-60 hover:bg-opacity-100 focus:outline-none">
+                        <span class="text-myblack text-sm lg:text-lg">قبلی</span> 
+                    </a>
+                {% endif %}
+                {% if after_post_slug %}
+                    <a href="/post/{{ after_post_slug }}/" class="flex items-center justify-center w-9 h-9 rounded-lg px-6 lg:px-10 opacity-50 hover:opacity-100 transition-all duration-300 bg-mywhite bg-opacity-60 hover:bg-opacity-100 focus:outline-none">
+                        <span class="text-myblack text-sm lg:text-lg">بعدی</span> 
+                    </a>
+                {% endif %}
             </div>
         </div>   
         <dive class="bg-mywhite p-8 mx-6 my-15 rounded-xl shadow-lg max-w-4xl w-full text-center" hidden>
