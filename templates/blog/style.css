@@ -40,3 +40,12 @@
     }
     
 }
+
+@layer utilities {
+    .word-spacing-tight {
+      word-spacing: -0.05em;
+    }
+    .word-spacing-wide {
+      word-spacing: 0.1em;
+    }
+}
