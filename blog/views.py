@@ -22,8 +22,8 @@ def get_persian_date(mydate):
     return f'{weekday}، {day} {month} {year}'
 
 def get_before_after_post_slug(mydate):
-    before_post = Post.objects.filter(publish_date__lt=mydate, is_active=True, is_published=True).first()
-    after_post = Post.objects.filter(publish_date__gt=mydate, is_active=True, is_published=True).first()
+    before_post = Post.objects.filter(publish_date__lt=mydate, is_active=True, is_published=True).order_by('publish_date').last()
+    after_post = Post.objects.filter(publish_date__gt=mydate, is_active=True, is_published=True).order_by('publish_date').first()
     before_slug = before_post.slug if before_post else ''
     after_slug = after_post.slug if after_post else ''
     return before_slug ,after_slug
