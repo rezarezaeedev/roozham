@@ -40,8 +40,9 @@ def home(request):
     return render(request, 'blog/home.html', {'post': post, 'blogsettings':blogsettings, 'publish_date':post_publish_date, 'before_post_slug':before_post_slug, 'after_post_slug':after_post_slug}, status=200)
 
 def post(request, slug):
+    today_date = date.today()
     blogsettings = BlogSettings.objects.filter(is_active=1).last()
-    post = get_object_or_404(Post, slug=slug, is_active=True, is_published=True)
+    post = get_object_or_404(Post, slug=slug, is_active=True, is_published=True, publish_date__lte=today_date)
     post_publish_date = JalaliDate(post.publish_date)
     post_publish_date = get_persian_date(post_publish_date)
     before_post_slug, after_post_slug = get_before_after_post_slug(post.publish_date)
