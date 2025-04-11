@@ -41,7 +41,7 @@ def home(request):
 
 def post(request, slug):
     blogsettings = BlogSettings.objects.filter(is_active=1).last()
-    post = get_object_or_404(Post, slug=slug)
+    post = get_object_or_404(Post, slug=slug, is_active=True, is_published=True)
     post_publish_date = JalaliDate(post.publish_date)
     post_publish_date = get_persian_date(post_publish_date)
     before_post_slug, after_post_slug = get_before_after_post_slug(post.publish_date)
