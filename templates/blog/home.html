@@ -36,11 +36,11 @@
     <header class="bg-gradient-to-r from-blue-900 via-blue-600 to-purple-500 text-gray-100 py-1 sm:py-3 md:py-5 shadow-md shadow-lg">
         <div class="container mx-auto px-4 flex flex-col-reverse sm:flex-row justify-between items-center gap-y-5">
             <h2 class="text-md sm:text-2xl lg:text-3xl xl:text-4xl font-bold mb-2 sm:mb-0 text-center sm:text-right w-full">
-                <a href="/" class="hover:text-yellow-300 transition-all duration-200"><i class="fa-solid fa-pen"></i> {{ blogsettings.page_title }}</a>
+                <a href="/" class="hover:text-yellow-300 transition-all duration-200"><i class="fa-solid fa-pen"></i> <em style="font-style: normal;">{{ blogsettings.page_title }}</em></a>
             </h2>
             <a href="{{ blogsettings.owner.website }}" rel="nofollow noopener" class="flex w-full items-center justify-between sm:justify-end space-x-4 mt-2 sm:mt-0 px-2">
                 <div class="text-center sm:text-left">
-                    <h1 class="text-gray-200 text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold">{{ blogsettings.owner.get_full_name_in_persian }}</h1>
+                    <h2 class="text-gray-200 text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold"><strong>{{ blogsettings.owner.get_full_name_in_persian }}</strong></h2>
                     <p class="text-[10px] sm:text-sm text-gray-300">درباره من بیشتر بدانید</p>
                 </div>
                 {% if blogsettings.owner.image %}
@@ -58,7 +58,7 @@
             <article class="flex flex-col bg-gray-100 px-6 py-5 rounded-xl shadow-lg mb-6 max-w-4xl w-4xl gap-y-2">
                 <p class="text-[11px] lg:text-sm text-gray-500 mb-7 mt-0 pt-0">{{ publish_date }}</p>
                 <div class="flex flex-col  gap-5 px-3 sm:px-10 lg:px-15 py-5">
-                    <h2 class="relative whitespace-pre-line text-lg sm:text-xl font-semibold text-indigo-600 text-justify tracking-normal word-spacing-wide leading-relaxed"><sup class="font-normal text-[11px] lg:text-sm opacity-60 top-[-15px] absolute">سوال روز</sup> {{ post.day_question }}</h2>
+                    <div class="relative whitespace-pre-line text-lg sm:text-xl font-semibold text-indigo-600 text-justify tracking-normal word-spacing-wide leading-relaxed"><sup class="font-normal text-[11px] lg:text-sm opacity-60 top-[-15px] absolute">سوال روز</sup> <h1>{{ post.day_question }}</h1></div>
                     <p class="whitespace-pre-line text-base text-md sm:text-lg text-gray-700 text-justify text-balance mt-5 tracking-normal word-spacing-tight leading-loose">{{ post.text }}</p>
                     <p class="whitespace-pre-line text-base text-md sm:text-lg text-gray-500 text-justify text-balance m-3 mt-4 italic scale-95 border-t  tracking-normal word-spacing-tight leading-loose"  hidden><span class="block text-center">متن مخفی:</span> {{ post.secret_text }}</p>
                     <div class="flex justify-between space-x-4 mt-7">
@@ -82,36 +82,38 @@
             </article>
         </div>
         
-        <div class=" px-4 ">
+        <div class=" px-4">
             <div class="max-w-4xl mx-auto mt-10 ">
                 <form class="bg-gray-100 p-6 rounded-lg shadow-md">
-                  <h2 class="text-2xl font-semibold text-center mb-6">تو چطور..!؟</h2>
+                  <p class="text-center p-2 text-yellow-700 my-3 animate-pulse duration-700" >قابلیت نظردهی و کامنت گذاری در نسخه های آینده منتشر میشود. ممنون از برداری شما.</p>
+                  <p class="text-2xl font-semibold text-center mb-6">تو چطور..!؟</p>
                   
-                  <!-- Name Input -->
-                  <div class="mb-4">
-                    <label for="name" class="block text-sm font-medium text-gray-700">نام شما</label>
-                    <input type="text" id="name" name="name" class="w-full p-3 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="نام خود را وارد کنید" required>
-                  </div>
-                  
-                  <!-- Email Input -->
-                  <div class="mb-4">
-                    <label for="email" class="block text-sm font-medium text-gray-700">ایمیل شما</label>
-                    <input type="email" id="email" name="email" class="w-full p-3 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="ایمیل خود را وارد کنید" required>
-                  </div>
-                  
-                  <!-- Comment Textarea -->
-                  <div class="mb-4">
-                    <label for="comment" class="block text-sm font-medium text-gray-700">نظر شما</label>
-                    <textarea id="comment" name="comment" rows="4" class="w-full p-3 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="نظر خود را بنویسید" required></textarea>
-                  </div>
-                  
-                  <!-- Submit Button -->
-                  <div class="flex justify-center">
-                    <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                      ارسال کامنت
-                    </button>
+                  <div style="opacity: 50%;">
+                    <!-- Name Input -->
+                    <div class="mb-4">
+                        <label for="name" class="block text-sm font-medium text-gray-700">نام شما</label>
+                        <input type="text" id="name" name="name" class="w-full p-3 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="نام خود را وارد کنید" required>
                     </div>
-                    <p class="text-center p-2 text-yellow-600">قابلیت نظردهی و کامنت گذاری در نسخه های آینده منتشر میشود. ممنون از برداری شما.</p>
+                    
+                    <!-- Email Input -->
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium text-gray-700">ایمیل شما</label>
+                        <input type="email" id="email" name="email" class="w-full p-3 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="ایمیل خود را وارد کنید" required>
+                    </div>
+                    
+                    <!-- Comment Textarea -->
+                    <div class="mb-4">
+                        <label for="comment" class="block text-sm font-medium text-gray-700">نظر شما</label>
+                        <textarea id="comment" name="comment" rows="4" class="w-full p-3 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="نظر خود را بنویسید" required></textarea>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="flex justify-center">
+                        <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        ارسال کامنت
+                        </button>
+                    </div>
+                </div>
                 </form>
               </div>
         </div>
