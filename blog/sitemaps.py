@@ -9,7 +9,7 @@ class PostSitemap(Sitemap):
 
     def items(self):
         today_date = date.today()
-        return Post.objects.filter(is_active=True, is_published=True, publish_date__lte=today_date)
+        return Post.objects.filter(is_active=True)
 
     def lastmod(self, obj):
         return obj.created_at
